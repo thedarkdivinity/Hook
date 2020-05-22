@@ -1,11 +1,22 @@
-import React from "react";
-import "./styles.css";
+import React, { useState } from "react";
 
-export default function App() {
+const App = () => {
+  const state = useState();
+  const [count, setCount] = useState(0);
+  const IncNum = () => {
+    console.log("clicked");
+
+    setCount(count + 1);
+  };
+  // console.log(state);
+
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <>
+      <div className="main">
+        <h1>{count}</h1>
+        <button onClick={IncNum}>Click Me</button>
+      </div>
+    </>
   );
-}
+};
+export default App;
